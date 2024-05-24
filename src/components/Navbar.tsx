@@ -70,7 +70,7 @@ export default function Navbar({ location }: Props) {
         try {
           setLoadingCity(true);
           const response = await axios.get(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`
+            `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=658767b0ae936b022f59a69f44868419`
           );
           setTimeout(() => {
             setLoadingCity(false);
