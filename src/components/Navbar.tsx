@@ -15,7 +15,6 @@ type Props = { location?: string };
 export default function Navbar({ location }: Props) {
   const [city, setCity] = useState("");
   const [error, setError] = useState("");
-  //
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [place, setPlace] = useAtom(placeAtom);
@@ -85,10 +84,12 @@ export default function Navbar({ location }: Props) {
   }
   return (
     <>
-      <nav className="bg-orange-300 shadow-md shadow-red-500  sticky top-0 left-0 z-50 bg-white">
+      <nav className="bg-orange-300 shadow-md shadow-red-500  sticky top-0 left-0 z-50 ">
         <div className="h-[80px]     w-full    flex   justify-between items-center  max-w-7xl px-3 mx-auto">
           <p className="flex items-center justify-center gap-2  ">
-            <h2 className="text-gray-500 text-3xl hover:translate-x-5 hover:translate-y-1 hover:text-4xl">Let's Check Weather </h2>
+            <h2 className="text-gray-500 text-3xl hover:translate-x-5 hover:translate-y-1 hover:text-4xl">
+              Lets Check Weather{" "}
+            </h2>
             <MdWbSunny className="text-4xl mt-1 text-yellow-200 shadow-md shadow-red-500 hover:translate-x-5 hover:translate-y-2  rounded-full  p-0.5" />
           </p>
           {/*  */}
@@ -113,7 +114,7 @@ export default function Navbar({ location }: Props) {
                   showSuggestions,
                   suggestions,
                   handleSuggestionClick,
-                  error
+                  error,
                 }}
               />
             </div>
@@ -134,7 +135,7 @@ export default function Navbar({ location }: Props) {
               showSuggestions,
               suggestions,
               handleSuggestionClick,
-              error
+              error,
             }}
           />
         </div>
@@ -147,7 +148,7 @@ function SuggetionBox({
   showSuggestions,
   suggestions,
   handleSuggestionClick,
-  error
+  error,
 }: {
   showSuggestions: boolean;
   suggestions: string[];
